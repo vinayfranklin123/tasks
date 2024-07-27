@@ -7,8 +7,8 @@ class TaskSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Task
-        fields = ['id', 'name', 'description', 'to_be_completed_time', 'created_at', 'completed', 'completion_time', 'user', 'deleted', 'status']
-        read_only_fields = ['created_at', 'user', 'completed', 'completion_time', 'deleted']
+        fields = ['id', 'name', 'description', 'to_be_completed_time', 'created_at', 'updated_at', 'completed', 'completion_time', 'user', 'deleted', 'deleted_at', 'status']
+        read_only_fields = ['created_at', 'updated_at', 'user', 'completed', 'completion_time', 'deleted', 'deleted_at']
 
     def get_status(self, obj):
         now = timezone.now()
