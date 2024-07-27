@@ -15,7 +15,7 @@ This is a Django-based task manager application that includes user authenticatio
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/vinayfranklin123/tasks.git
 cd your-repo
 ```
 
@@ -32,18 +32,6 @@ If you have a `requirements.txt` file, you can install dependencies with:
 
 ```bash
 pip install -r requirements.txt
-```
-
-If you don't have a `requirements.txt` file, you can install necessary packages and generate one:
-
-```bash
-pip install django
-pip install djangorestframework
-pip install djangorestframework-authtoken
-pip install psycopg2-binary
-pip install python-dotenv
-
-pip freeze > requirements.txt
 ```
 
 ### 4. PostgreSQL Setup
