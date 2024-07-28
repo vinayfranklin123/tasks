@@ -9,9 +9,9 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.pagination import PageNumberPagination
 from .models import Task
 from .serializers import TaskSerializer
+from .pagination import CustomPageNumberPagination  
 
 # Create a logger instance
 logger = logging.getLogger('myapp')
@@ -156,7 +156,8 @@ def list_tasks(request):
     else:
         tasks = tasks.order_by(f'-{sort_by}')
 
-    paginator = PageNumberPagination()
+    paginator = CustomPageNumberPagination()
+    paginator.page_size = 5
     paginated_tasks = paginator.paginate_queryset(tasks, request)
     serializer = TaskSerializer(paginated_tasks, many=True)
     return paginator.get_paginated_response(serializer.data)
