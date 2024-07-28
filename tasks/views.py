@@ -22,6 +22,11 @@ def create_task(request):
     data = json.loads(request.body.decode('utf-8'))
     serializer = TaskSerializer(data=data)
 
+    required_fields = ['name', 'description', 'to_be_completed_time']
+    for field in required_fields:
+        if field not in data:
+            return Response({'error': f'{field} is required.'}, status=status.HTTP_400_BAD_REQUEST)
+
     to_be_completed_time_str = data['to_be_completed_time'].rstrip('Z')
     try:
         to_be_completed_time = timezone.datetime.fromisoformat(to_be_completed_time_str)
