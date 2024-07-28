@@ -16,7 +16,7 @@ This is a Django-based task manager application that includes user authenticatio
 
 ```bash
 git clone https://github.com/vinayfranklin123/tasks.git
-cd your-repo
+cd tasks
 ```
 
 ### 2. Create and Activate a Virtual Environment
@@ -28,7 +28,7 @@ source venv/bin/activate
 
 ### 3. Install Dependencies
 
-If you have a `requirements.txt` file, you can install dependencies with:
+You can install dependencies with:
 
 ```bash
 pip install -r requirements.txt
