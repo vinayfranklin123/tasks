@@ -58,18 +58,21 @@ GRANT ALL PRIVILEGES ON DATABASE task_manager TO task_user;
 \q
 ```
 
-### 5. Configure Environment Variables
+### 5. Configure Settings
 
-Create a `.env` file in the root directory of your project and add the following configurations:
+Update the settings.py file in your Django project to include the database and other configurations:
 
-```env
-SECRET_KEY=your_secret_key
-DEBUG=True
-DATABASE_NAME=task_manager
-DATABASE_USER=task_user
-DATABASE_PASSWORD=password
-DATABASE_HOST=127.0.0.1
-DATABASE_PORT=5432
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'task_manager',
+        'USER': 'task_user',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 ```
 
 ### 6. Apply Migrations
