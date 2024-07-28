@@ -115,10 +115,10 @@ python manage.py test
 
 ### Task Management
 
-- **Create Task**: `POST /tasks/`
-- **Update Task**: `PUT /tasks/<task_id>/`
-- **Mark Task as Completed**: `POST /tasks/<task_id>/complete/`
-- **Soft Delete Task**: `DELETE /tasks/<task_id>/delete/`
+- **Create Task**: `POST /tasks/create/`
+- **Update Task**: `PUT /tasks/update/<int:task_id>/`
+- **Mark Task as Completed**: `POST /tasks/complete/<int:task_id>/`
+- **Soft Delete Task**: `DELETE /tasks/delete/<int:task_id>/`
 - **List Tasks**: `GET /tasks/list/`
 
 ## Project Structure
